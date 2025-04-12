@@ -50,7 +50,7 @@ android {
     }
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     testLogging {
         events "started", "passed", "skipped", "failed", "standardOut", "standardError"
     }
@@ -119,5 +119,5 @@ dependencies {
     implementation files("libs/jadx/jadx-plugins-api-v1.2.0.jar")
     implementation files("libs/jadx/jadx-dex-input-v1.2.0.jar")
     implementation files("libs/jadx/android-29-clst.jar")
-    implementation 'org.slf4j:slf4j-api:1.7.32' // 1.7.30
+    implementation 'org.slf4j:slf4j-api:2.0.16' // 1.7.30
 }
