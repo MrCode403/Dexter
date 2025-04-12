@@ -4,26 +4,29 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 35
+    namespace "ma.dexter"
 
     defaultConfig {
         applicationId "ma.dexter"
         minSdk 26
-        targetSdk 31
+        targetSdk 35
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     compileOptions {
@@ -75,7 +78,7 @@ dependencies {
     implementation 'io.github.Rosemoe.sora-editor:language-java:0.8.3'
     implementation 'com.github.angads25:filepicker:1.1.1'
     implementation 'me.zhanghai.android.fastscroll:library:1.1.7'
-    implementation 'com.github.zawadz88.materialpopupmenu:material-popup-menu:4.1.0'
+    implementation 'com.github.zawadz88:MaterialPopupMenu:4.1.0'
     implementation 'com.google.guava:guava:27.1-android'
 
     // javaparser
