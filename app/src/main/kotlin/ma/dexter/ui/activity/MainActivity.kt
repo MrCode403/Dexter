@@ -276,7 +276,10 @@ class MainActivity : BaseActivity() {
         })
         binding.viewPager.adapter = pagerAdapter
 
-        viewModel.addMainItem()
+        // Only add main item if it doesn't exist
+        if (viewModel.getPageItems().value?.isEmpty() == true) {
+            viewModel.addMainItem()
+        }
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, pos ->
             tab.text = pagerAdapter.getItem(pos).getTitle()
